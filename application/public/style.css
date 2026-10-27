@@ -1,0 +1,322 @@
+
+:root {
+  font-family: Inter, "Segoe UI", Arial, sans-serif;
+  color: #202b3c;
+  background: #f5f7fb;
+  font-synthesis: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px max(5%, calc((100% - 1000px) / 2));
+  background: #fff;
+  border-bottom: 1px solid #e7ebf2;
+}
+
+.brand {
+  color: #4f46e5;
+  font-size: 1.3rem;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.cloud-label {
+  color: #64748b;
+  font-size: 0.8rem;
+}
+
+.container {
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 44px 22px;
+}
+
+.hero {
+  margin-bottom: 28px;
+}
+
+.eyebrow {
+  color: #6366f1;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+}
+
+h1 {
+  margin: 10px 0;
+  font-size: clamp(2.3rem, 6vw, 3.8rem);
+  letter-spacing: -0.06em;
+}
+
+h1 span {
+  color: #4f46e5;
+}
+
+.subtitle {
+  max-width: 540px;
+  color: #64748b;
+  line-height: 1.7;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin: 28px 0;
+}
+
+.stat-card,
+.panel,
+.task-card {
+  background: #fff;
+  border: 1px solid #e7ebf2;
+  border-radius: 16px;
+}
+
+.stat-card {
+  padding: 20px;
+}
+
+.stat-card span {
+  display: block;
+  color: #64748b;
+  font-size: 0.85rem;
+}
+
+.stat-card strong {
+  display: block;
+  margin-top: 8px;
+  font-size: 1.8rem;
+}
+
+.panel {
+  padding: 24px;
+  box-shadow: 0 8px 28px rgb(31 41 55 / 4%);
+}
+
+h2 {
+  margin-top: 0;
+}
+
+form label {
+  display: block;
+  margin: 18px 0 8px;
+  font-size: 0.88rem;
+  font-weight: 650;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid #dbe1eb;
+  border-radius: 10px;
+  outline: none;
+  background: #fff;
+}
+
+input:focus,
+textarea:focus {
+  border-color: #6366f1;
+  box-shadow: 0 0 0 3px rgb(99 102 241 / 12%);
+}
+
+textarea {
+  resize: vertical;
+}
+
+.form-actions,
+.task-actions,
+.tasks-heading {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.form-actions {
+  margin-top: 16px;
+}
+
+.primary-button,
+.secondary-button,
+.small-button {
+  padding: 10px 15px;
+  border: 0;
+  border-radius: 9px;
+  font-weight: 650;
+}
+
+.primary-button {
+  color: #fff;
+  background: #4f46e5;
+}
+
+.primary-button:hover {
+  background: #4338ca;
+}
+
+.secondary-button,
+.small-button {
+  color: #334155;
+  background: #eef2f7;
+}
+
+.message {
+  min-height: 20px;
+  margin-bottom: 0;
+  color: #4f46e5;
+  font-size: 0.9rem;
+}
+
+.message.error {
+  color: #b91c1c;
+}
+
+.tasks-section {
+  margin-top: 42px;
+}
+
+.tasks-heading {
+  justify-content: space-between;
+  margin-bottom: 18px;
+}
+
+.tasks-heading h2 {
+  margin-bottom: 0;
+}
+
+.tasks-heading .eyebrow {
+  margin-bottom: 7px;
+}
+
+.task-list {
+  display: grid;
+  gap: 12px;
+}
+
+.task-card {
+  padding: 19px;
+}
+
+.task-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.task-title {
+  margin: 0;
+  overflow-wrap: anywhere;
+  font-size: 1.05rem;
+}
+
+.task-description {
+  color: #64748b;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  line-height: 1.6;
+}
+
+.completed .task-title {
+  color: #94a3b8;
+  text-decoration: line-through;
+}
+
+.status {
+  flex-shrink: 0;
+  height: fit-content;
+  padding: 5px 9px;
+  border-radius: 20px;
+  color: #92400e;
+  background: #fef3c7;
+  font-size: 0.75rem;
+}
+
+.status.done {
+  color: #166534;
+  background: #dcfce7;
+}
+
+.task-actions {
+  flex-wrap: wrap;
+  margin-top: 15px;
+}
+
+.small-button {
+  padding: 8px 11px;
+  font-size: 0.82rem;
+}
+
+.small-button.delete {
+  color: #b91c1c;
+  background: #fee2e2;
+}
+
+.empty-state {
+  padding: 30px;
+  border: 1px dashed #cbd5e1;
+  border-radius: 12px;
+  color: #64748b;
+  text-align: center;
+}
+
+.hidden {
+  display: none !important;
+}
+
+footer {
+  margin-top: 48px;
+  color: #94a3b8;
+  font-size: 0.8rem;
+  text-align: center;
+}
+
+@media (max-width: 560px) {
+  .container {
+    padding: 30px 15px;
+  }
+
+  .stats {
+    gap: 8px;
+  }
+
+  .stat-card {
+    padding: 14px 10px;
+  }
+
+  .stat-card span {
+    font-size: 0.75rem;
+  }
+
+  .stat-card strong {
+    font-size: 1.45rem;
+  }
+
+  .panel {
+    padding: 18px;
+  }
+
+  .cloud-label {
+    font-size: 0.7rem;
+  }
+}

@@ -1,0 +1,82 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Manage your student tasks in one place.">
+  <title>Student Task Manager</title>
+  <link rel="stylesheet" href="/style.css">
+  <script src="/script.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="/">TaskFlow</a>
+    <span class="cloud-label">Cloudflare Workers + KV</span>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <p class="eyebrow">YOUR PERSONAL WORKSPACE</p>
+      <h1>Get things <span>done.</span></h1>
+      <p class="subtitle">Organize your assignments, track your progress, and stay focused.</p>
+    </section>
+
+    <section class="stats">
+      <article class="stat-card">
+        <span>Total tasks</span>
+        <strong id="total-count">0</strong>
+      </article>
+      <article class="stat-card">
+        <span>Pending</span>
+        <strong id="pending-count">0</strong>
+      </article>
+      <article class="stat-card">
+        <span>Completed</span>
+        <strong id="completed-count">0</strong>
+      </article>
+    </section>
+
+    <section class="panel">
+      <h2 id="form-heading">Create a task</h2>
+      <form id="task-form">
+        <label for="task-title">Task title</label>
+        <input id="task-title" name="title" maxlength="160"
+          placeholder="e.g. Finish cloud computing assignment" required>
+
+        <label for="task-description">Description (optional)</label>
+        <textarea id="task-description" name="description" rows="3"
+          maxlength="1000" placeholder="Add a few details..."></textarea>
+
+        <div class="form-actions">
+          <button class="primary-button" id="submit-button" type="submit">
+            Add task
+          </button>
+          <button class="secondary-button hidden" id="cancel-edit"
+            type="button">Cancel edit</button>
+        </div>
+      </form>
+      <p id="message" class="message" role="status" aria-live="polite"></p>
+    </section>
+
+    <section class="tasks-section">
+      <div class="tasks-heading">
+        <div>
+          <p class="eyebrow">YOUR WORKLOAD</p>
+          <h2>Your tasks</h2>
+        </div>
+        <button class="secondary-button" id="refresh-button" type="button">
+          Refresh
+        </button>
+      </div>
+      <div id="task-list" class="task-list">
+        <p class="empty-state">Loading your tasks...</p>
+      </div>
+    </section>
+
+    <footer>
+      Student Task Manager · Built with Terraform, Cloudflare Workers and KV
+    </footer>
+  </main>
+</body>
+</html>
