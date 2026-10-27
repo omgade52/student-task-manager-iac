@@ -24,3 +24,6 @@ node_modules/
 .vscode/
 .DS_Store
 Thumbs.db
+
+# Local Terraform state backup
+terraform/terraform-state-backup.json

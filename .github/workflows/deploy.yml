@@ -11,8 +11,8 @@ permissions:
   contents: read
 
 jobs:
-  deploy:
-    name: Validate and Deploy
+  validate:
+    name: Validate Terraform
     runs-on: ubuntu-latest
 
     defaults:
@@ -31,17 +31,10 @@ jobs:
         uses: hashicorp/setup-terraform@v3
 
       - name: Initialize Terraform
-        run: terraform init -input=false
+        run: terraform init -backend=false -input=false
 
-      - name: Format check
+      - name: Check formatting
         run: terraform fmt -check -recursive
 
-      - name: Validate Terraform
+      - name: Validate configuration
         run: terraform validate
-
-      - name: Plan deployment
-        run: terraform plan -input=false
-
-      - name: Apply deployment
-        if: github.event_name == 'workflow_dispatch'
-        run: terraform apply -input=false -auto-approve
